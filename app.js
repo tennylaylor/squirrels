@@ -13,6 +13,11 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Hello", user: { name: "Student" } });
 });
 
+app.get("/users", (req, res) => {
+  const users = [{ name: "Alice" }, { name: "Bob" }, { name: "Charlie" }];
+  res.render("users", { users });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
 });
